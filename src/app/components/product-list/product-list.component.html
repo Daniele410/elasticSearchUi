@@ -1,1 +1,26 @@
-<p>product-list works!</p>
+<div>
+  <h1>Product List</h1>
+  <button (click)="deleteAll()">Delete All Products</button>
+  <table>
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Price</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of products">
+        <td>{{ product.id }}</td>
+        <td>{{ product.name }}</td>
+        <td>{{ product.description }}</td>
+        <td>{{ product.price | currency:'EUR' }}</td>
+        <td>
+          <button (click)="deleteProduct(product.id!)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

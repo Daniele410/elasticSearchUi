@@ -36,6 +36,11 @@ export class ProductListComponent implements OnInit {
     this.loadProducts();
   }
 
+  applyFilter(event: Event): void {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
+
   loadProducts(): void {
     this.productService.getAllProducts().subscribe({
       next: (data) => {
@@ -46,10 +51,7 @@ export class ProductListComponent implements OnInit {
     });
   }
 
-  applyFilter(event: Event): void {
-    const filterValue = (event.target as HTMLInputElement).value;
-    this.dataSource.filter = filterValue.trim().toLowerCase();
-  }
+  
 
   deleteProduct(id: string): void {
     this.productService.deleteProduct(id).subscribe(() => {

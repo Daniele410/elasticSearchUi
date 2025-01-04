@@ -1,20 +1,25 @@
-<h1>Aggiungi Nuovo Prodotto</h1>
-<form (ngSubmit)="saveProduct()">
-    <div>
-        <label>Id:</label>
-        <input [(ngModel)]="product.id" name="id" required />
-      </div>
-  <div>
-    <label>Nome:</label>
-    <input [(ngModel)]="product.name" name="name" required />
-  </div>
-  <div>
-    <label>Descrizione:</label>
-    <input [(ngModel)]="product.description" name="description" required />
-  </div>
-  <div>
-    <label>Prezzo:</label>
-    <input type="number" [(ngModel)]="product.price" name="price" required />
-  </div>
-  <button type="submit">Salva</button>
+<h1 class="mat-headline-5">Add New Product</h1>
+
+<form (ngSubmit)="saveProduct()" class="product-form">
+  <mat-form-field appearance="outline">
+    <mat-label>Id</mat-label>
+    <input matInput [(ngModel)]="product.id" name="id" required />
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Nome</mat-label>
+    <input matInput [(ngModel)]="product.name" name="name" required />
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Descrizione</mat-label>
+    <textarea matInput [(ngModel)]="product.description" name="description" required></textarea>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Prezzo</mat-label>
+    <input matInput type="number" [(ngModel)]="product.price" name="price" required />
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" type="submit">Salva</button>
 </form>

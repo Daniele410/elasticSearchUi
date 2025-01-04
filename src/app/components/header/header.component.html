@@ -1,15 +1,22 @@
-<mat-toolbar color="primary">
-    <button mat-icon-button [routerLink]="['/']">
-      <mat-icon>home</mat-icon>
-    </button>
-    <span>My App</span>
-    <span class="example-spacer"></span>
-    <button mat-button [routerLink]="['/products']">
-      <mat-icon>list</mat-icon>
-      Prodotti
-    </button>
-    <button mat-button [routerLink]="['/add-product']">
-      <mat-icon>add</mat-icon>
-      Aggiungi Prodotto
-    </button>
-  </mat-toolbar>
+<mat-toolbar color="primary" class="header-toolbar">
+  <!-- Pulsante Home -->
+  <button mat-icon-button [routerLink]="['/']" class="home-button">
+    <mat-icon>home</mat-icon>
+  </button>
+
+  <!-- Titolo -->
+  <span class="header-title">ElasticSearch UI</span>
+
+  <span class="spacer"></span>
+
+  <!-- Pulsanti di navigazione -->
+  <button mat-button [routerLink]="['/products']" class="nav-button">
+    <mat-icon>list</mat-icon>
+    <span>Product</span>
+  </button>
+
+  <button mat-button color="accent" [routerLink]="['/add-product']" class="nav-button">
+    <mat-icon>add</mat-icon>
+    <span>Add Product</span>
+  </button>
+</mat-toolbar>
